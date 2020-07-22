@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- LTE band info. Format is [BAND_NUMBER/NOMINAL_FREQ/DESCRIPTION] -->
+    <string-array name="lte_bands">
+        <item>1/2100/IMT</item>
+        <item>2/1900/PCS</item>
+        <item>3/1800/DCS</item>
+        <item>4/1700/AWS-1</item>
+        <item>5/850/Cellular</item>
+        <item>7/2600/IMT-E</item>
+        <item>8/900/Ext. GSM</item>
+        <item>11/1500/Lower PDC</item>
+        <item>12/700/Lower SMH</item>
+        <item>13/700/Upper SMH</item>
+        <item>14/700/Upper SMH</item>
+        <item>17/700/Lower SMH</item>
+        <item>18/850/Lower 800 (Japan)</item>
+        <item>19/850/Upper 800 (Japan)</item>
+        <item>20/800/Digital Dividend (EU)</item>
+        <item>21/1500/Upper PDC</item>
+        <item>24/1600/Upper L-Band (US)</item>
+        <item>25/1900/Ext. PCS</item>
+        <item>26/850/Ext. Cellular</item>
+        <item>28/700/APT</item>
+        <item>29/700/Lower SMH</item>
+        <item>30/2300/WCS</item>
+        <item>31/450/NMT</item>
+        <item>32/1500/L-Band (EU)</item>
+        <item>34/2000/IMT</item>
+        <item>37/1900/PCS</item>
+        <item>38/2600/IMT-E</item>
+        <item>39/1900/DCS-IMT Gap</item>
+        <item>40/2300/S-Band</item>
+        <item>41/2500/BRS</item>
+        <item>42/3500/CBRS (EU, Japan)</item>
+        <item>43/3700/C-Band</item>
+        <item>44/700/APT</item>
+        <item>46/5200/U-NII</item>
+        <item>47/5900/U-NII-4</item>
+        <item>48/3500/CBRS (US)</item>
+        <item>49/3500/C-Band</item>
+        <item>50/1500/L-Band (EU)</item>
+        <item>51/1500/L-Band Ext. (EU)</item>
+        <item>52/3300/C-Band</item>
+        <item>53/2400/S-Band</item>
+        <item>65/2100/Ext. IMT</item>
+        <item>66/1700/Ext. AWS (1–3)</item>
+        <item>67/700/EU 700</item>
+        <item>68/700/ME 700</item>
+        <item>69/2600/IMT-E</item>
+        <item>70/1700/Suppl. AWS (2–4)</item>
+        <item>71/600/Digital Dividend (US)</item>
+        <item>72/450/PMR (EU)</item>
+        <item>73/450/PMR (APT)</item>
+        <item>74/1500/Lower L-Band (US)</item>
+        <item>75/1500/L-Band (EU)</item>
+        <item>76/1500/L-Band Ext. (EU)</item>
+        <item>85/700/Ext. Lower SMH</item>
+        <item>87/410/PMR (APT)</item>
+        <item>88/410/PMR (EU)</item>
+    </string-array>
+</resources>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/band_list"
+        android:padding="16dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="3"
+        tools:listitem="@layout/lte_band_item"
+        />
+
+    <LinearLayout
+        android:id="@+id/button_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="4dp"
+        android:gravity="center">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            />
+
+        <ImageView
+            android:id="@+id/deselect_all"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:elevation="16dp"
+            android:background="?android:selectableItemBackgroundBorderless"
+            android:contentDescription="@string/deselect_all"
+            android:src="@drawable/ic_baseline_radio_button_unchecked_24"
+            />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            />
+
+        <ImageView
+            android:id="@+id/select_all"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:elevation="16dp"
+            android:background="?android:selectableItemBackgroundBorderless"
+            android:contentDescription="@string/select_all"
+            android:src="@drawable/ic_baseline_check_circle_outline_24"
+            />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>
