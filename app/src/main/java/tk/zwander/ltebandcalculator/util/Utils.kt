@@ -1,5 +1,7 @@
 package tk.zwander.ltebandcalculator.util
 
+import com.ionspin.kotlin.bignum.integer.BigInteger
+
 /**
  * Do the magic of getting an NV value from a band.
  * Qualcomm's LTE NV format is pretty simple. In binary,
@@ -11,24 +13,34 @@ package tk.zwander.ltebandcalculator.util
  *
  * ==================================
  *
- * To calculate the value, take the bands the user has selected
- * (say 1,2,3,5) and loop through them. Each band is represented
- * by a 1, and its digits place is its number. Take the current
- * band sum (which starts at 0) and add to it. Shift that addition
- * left by (band_number - 1).
+ * One possible way to calculate the value is to take the bands
+ * the user has selected (say 1,2,3,5) and loop through them.
+ * Each band is represented by a 1, and its digits place is its number.
+ * Take the current band sum (which starts at 0) and add to it.
+ * Shift that addition left by (band_number - 1).
  *
  * For example, adding band 1 will add a
  * 1 shifted left 0 places. Adding band 2 will add a 1 shifted left 1
- * place. Adding band 3 will ass a 1 shifted left 2 places. And so on.
+ * place. Adding band 3 will add a 1 shifted left 2 places. And so on.
  *
  * The output in binary will be 10111, which is 23 in decimal.
+ *
+ * ==================================
+ *
+ * However, by the time we reach somewhere between bands 53 and 65,
+ * we hit a Long overflow. Even using a BigInteger implementation, it
+ * fails for some reason. So instead, we can just use 2^(band - 1).
+ * This does the same thing as the bit shifting, but in base-10,
+ * and seems to work more reliably.
  */
-fun calculateBandNumber(selectedBands: Collection<Int>): Long {
-    var bands = 0L
+@ExperimentalUnsignedTypes
+fun calculateBandNumber(selectedBands: Collection<Int>): BigInteger {
+    var bands = BigInteger(0)
 
     selectedBands.forEach {
         if (it < 1) throw IllegalArgumentException("Band number must be > 1")
-        bands = bands or (1L shl (it - 1))
+//        bands = bands or (BigInteger(1).shl(it - 1))
+        bands = bands + BigInteger(2).pow(BigInteger(it - 1))
     }
 
     return bands
