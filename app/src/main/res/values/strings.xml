@@ -3,8 +3,12 @@
 
     <string name="band_freq_template">%d MHz</string>
 
+    <string name="calc_bands_from_number">Calculate Bands from Value</string>
+    <string name="calc_number_from_bands">Calculate Value from Bands</string>
     <string name="copy_result">Copy Result</string>
     <string name="result">Result</string>
+    <string name="value">Value</string>
+    <string name="bands">Bands</string>
     <string name="selection">Selection</string>
     <string name="selected_bands">Selected Bands</string>
     <string name="select_bands">Select Bands</string>
