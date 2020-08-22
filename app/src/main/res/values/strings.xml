@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">LTEBandCalculator</string>
+    <string name="app_name">LTE Band Calculator</string>
 
     <string name="band_freq_template">%d MHz</string>
 
