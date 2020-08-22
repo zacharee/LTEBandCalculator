@@ -6,6 +6,7 @@ import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.widget.doOnTextChanged
+import com.ionspin.kotlin.bignum.integer.BigInteger
 import kotlinx.android.synthetic.main.activity_main.*
 import tk.zwander.ltebandcalculator.data.BandInfo
 import tk.zwander.ltebandcalculator.util.calculateBandNumber
@@ -51,9 +52,9 @@ class MainActivity : AppCompatActivity() {
     @ExperimentalUnsignedTypes
     private fun updateResult() {
         val selectedBands = bands.values.filter { it.isSelected }.map { it.band }
-        val result = calculateBandNumber(selectedBands)
+        val result = calculateBandNumber(selectedBands).run { if (this == BigInteger(0)) null else this }
 
-        result_field.setText(result.toString())
+        result_field.setText(result?.toString())
         selected_bands_field.setText(selectedBands.joinToString(","))
     }
 
